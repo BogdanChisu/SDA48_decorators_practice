@@ -6,13 +6,13 @@ def deco_is_odd(func):
     def wrapper(*args):
         func(*args)
         for arg in args:
-            if args[0] % 2 == 1:
-                print(f"{args[0]} is odd")
+            if arg % 2 == 1:
+                print(f"{arg} is odd")
             else:
-                print(f"{args[0]} is even")
+                print(f"{arg} is even")
     return wrapper
 @deco_is_odd
-def functia_mea(v1):
-    print(f"Numarul este {v1}")
+def functia_mea(*args):
+    print(f"Numarele sunt {args}")
 
-functia_mea(16)
+functia_mea(16, 17, 19)

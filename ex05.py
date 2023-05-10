@@ -12,14 +12,13 @@ def deco_func_has_special(func):
             results = re.findall(r"\W", arg)
             if results:
                 print(f"String invalid:\n{arg}")
-                break
-        else:
-             print("Strings are valid.")
+            else:
+                print(f"String valid:\n{arg}.")
 
     return wrapper
 
 @deco_func_has_special
-def my_function(str1, str2):
-    print(f"Parameters are '{str1}' and '{str2}'")
+def my_function(*args):
+    print(f"Parameters are '{args}'")
 
-my_function("&2343", "44546")
+my_function("2343", "445!46", "#$$%98734jh")
